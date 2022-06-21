@@ -1,4 +1,5 @@
 import Cliente from "../core/Cliente";
+import { IconeEdicao, IconeLixo } from "./Icones";
 
 interface TabelaProps {
     clientes: Cliente[]
@@ -11,6 +12,7 @@ export default function Tabela (props: TabelaProps) {
                 <td className="text-left p-4">Código</td>
                 <td className="text-left p-4">Nome</td>
                 <td className="text-left p-4">Idade</td>
+                <td className="text-left p-4">Ações</td>
             </tr>
         )
     }
@@ -22,9 +24,23 @@ export default function Tabela (props: TabelaProps) {
                     <td className="text-left p-4">{cliente.id}</td>
                     <td className="text-left p-4">{cliente.nome}</td>
                     <td className="text-left p-4">{cliente.idade}</td>
+                    {renderizarAcoes(cliente)}
                 </tr>
             )
         })
+    }
+
+    function renderizarAcoes(cliente: Cliente){
+        return (
+            <td className="flex">
+                <button className={`flex justify-center items-center text-green-600 rounded-full p-2 m-1 hover:bg-purple-50`}>
+                    {IconeEdicao}
+                </button>
+                <button className={`flex justify-center items-center text-red-600 rounded-full p-2 m-1 hover:bg-purple-50`}>
+                    {IconeLixo}
+                </button>
+            </td>
+        )
     }
 
     return (
