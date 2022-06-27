@@ -20,6 +20,7 @@
     "resolveJsonModule": true
     // "resolveJsonModule": true
     // "resolveJsonModule": true
+    // "resolveJsonModule": true
   },
   "include": [
     "next-env.d.ts",
