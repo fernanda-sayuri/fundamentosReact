@@ -1,4 +1,5 @@
-import Link from '../src/components/Link'
+import Link from '../src/components/Link';
+import Head from 'next/head';
 
 export default function FaqPage(){
     return (
